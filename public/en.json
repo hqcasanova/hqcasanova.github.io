@@ -1,0 +1,61 @@
+{
+  "language": "en",
+  "routes": {
+    "about": "about",
+    "work": "work"
+  },
+  "errors": {
+    "app": "App failure",
+    "system": "Internal error",
+    "request": "Server error",
+    "language": "Failed to retrieve language data. Perhaps you are offline?",
+    "pageNotFound": "That page could not be found. Maybe try one of the sections?",
+    "ok": "Dismiss"
+  },
+  "loading": "Loading...",
+  "tagline": "Web applications & UX",
+  "ctas": {
+    "about": "More <i>about</i> me",
+    "work": "View my <i>work</i>",
+    "contact": "New project? Email me at"
+  },
+  "copy": {
+    "action": "Copy email address",
+    "success": "Email address copied"
+  },
+  "urls": {
+    "linkedin": "https://uk.linkedin.com/in/hqcasanova"
+  },
+  "titles": {
+    "about": "About me",
+    "work": "Recent work"
+  },
+  "content": {
+    "about": [
+      "They say the sky is the limit. I always shoot for the moon though &#128512;.",
+      "Hi! I'm Hector, a <strong>frontend engineer</strong> with an academic background in scientific Java and over <strong>5 years</strong> of professional experience in the UK alone. I have helped build a diverse set of large-scale single-page apps: from a fully responsive <a aria-label=\"Work – Hevnly\" data-cooltipz-dir=\"bottom\" href=\"/work/3\">online store</a> for a London-based startup to an <a aria-label=\"Work – CENtree\"  data-cooltipz-dir=\"bottom\" href=\"/work/1\">ontology manager</a> for big pharma in Cambridge. My current expertise is in <a aria-label=\"Wikipedia entry\" data-cooltipz-dir=\"bottom\" href=\"https://en.wikipedia.org/wiki/Vue.js\"><strong>Vue.js</strong>.</a>",
+      "I'm a crafter that normally straddles the boundary between <strong>UX and code</strong>, acting as the link with the design team or product manager. My ultimate aim is to strike a balance between code complexity and user experience, letting the latter be the true driving force as much as possible. In essence, the big picture matters. That's why I love sweeping landscapes.",
+      "For full details on my university qualifications, visit my <a href=\"https://uk.linkedin.com/in/hqcasanova\">LinkedIn</a> profile. For recent experience, refer to the <i class=\"inline-section-link\">work</i> section."
+    ],
+    "work": [
+      {
+        "name": "CENtree",
+        "period": "Aug 2018 - Aug 2020",
+        "framework": "Vue",
+        "description": "As the UX engineer at <a href=\"https://www.scibite.com/\">SciBite</a>, I was tasked with every aspect of CENtree's single-page app. CENtree is a new <a aria-label=\"Wikipedia entry\"  data-cooltipz-dir=\"bottom\" href=\"https://en.wikipedia.org/wiki/Ontology_(information_science)\">ontology</a> management platform improving on the familiar features of the <a href=\"https://www.ebi.ac.uk/ols\">Ontology Lookup Service</a> by the <a href=\"https://www.ebi.ac.uk\">European Bioinformatics Institute</a> and extending them with novel functionality such as in-line term previews, WYSIWYG tree editing or reactive network graph renderings of relationships. All implemented in Vue JS to accommodate both discovery and specific user journeys while preserving simplicity. The target audience were scientists with a mixed technical background. Beyond CENtree, I also liaised with other groups within the company to align the identity and customer experience of all the apps in the SciBite ecosystem."
+      },
+      {
+        "name": "BioStudies",
+        "period": "Aug 2017 - Aug 2018",
+        "framework": "Angular",
+        "description": "I was the frontend engineer and lead UX designer for the <a href=\"https://www.ebi.ac.uk/biostudies/\">Biostudies</a> team within the <a href=\"https://www.ebi.ac.uk\">European Bioinformatics Institute</a>. Written in Angular, their single-page app for submission and validation relies heavily on dynamic forms to support generic studies that are not catered for by any other EBI service. My remit was to improve the overall reliability and intuitiveness of the app as well as delivering new features such as a real-time form checklist, validation groups or bulk file uploading."
+      },
+      {
+        "name": "Hevnly",
+        "period": "Nov 2014 - July 2017",
+        "framework": "Backbone/Marionette",
+        "description": "As the most senior developer on the frontend team at <a href=\"https://github.com/hevnly\">Hevnly</a>, I became responsible for most of the UI of the shopfront app. I also built the whole back-office app for vendors and helped improve and extend the magazine app. Some innovative features I had the opportunity to implement included optimistic filtering, localstorage-based caching and a recursive stock-aware product matrix."
+      }
+    ]
+  }
+}

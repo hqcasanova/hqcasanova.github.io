@@ -1,0 +1,29 @@
+// Neutral colours
+$black: $VUE_APP_SCSS_BLACK;
+$darker-grey: #212121;
+$dark-grey: #2e2e2e;
+$light-grey: #989898;
+$lighter-grey: $VUE_APP_SCSS_LIGHTER_GREY;
+$white: $VUE_APP_SCSS_WHITE;
+
+// Identity colours
+$primary: $VUE_APP_SCSS_BRAND_GREEN;
+$secondary: $VUE_APP_SCSS_BRIGHT_BLUE;
+
+// Informational colours
+$error: #af4717;
+$info: #004666;
+
+// Fixed height of top and bottom bars (the latter only shown on mobile / portrait tablet)
+$bar-height: 64px;
+
+// Minimum delay before showing loading state for async actions such as requests
+$feedback-delay: .7s;
+
+// Transition times
+$short-transition: .3s;
+$medium-transition: .5s;
+$long-transition: 1s;
+
+// Time delay for section-switching (pure CSS scroll) transitions
+$scroll-delay: 1.2s;
