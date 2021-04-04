@@ -8,11 +8,11 @@ import store from './store';
 require('swiped-events');
 const ClipboardJS = require('clipboard');
 
-// INSTANTIATION
+// INSTANTIATION AND GLOBALS
 const app = createApp(App).use(store).use(router);
 app.config.globalProperties.$Clipboard = ClipboardJS;
 
-// GLOBAL ERROR HANDLING
+// ERROR HANDLING
 app.config.errorHandler = function (error, vm, info) {
   const exception = `${error.toString()}. ${info}`;
   store.dispatch('newError', { source: 'app', exception });

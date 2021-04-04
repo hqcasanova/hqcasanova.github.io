@@ -15,6 +15,7 @@
       <contact-link
         class="menu-contact-link"
         :subject="locale.emailSubject"
+        :body="contactBody()"
       />
       <copy-button
         :copyText="contactAddress"
@@ -50,6 +51,7 @@
         <span class="contact-label">{{ locale.ctas.contact }}</span>
         <contact-link
           :subject="locale.emailSubject"
+          :body="contactBody()"
           @mounted="contactAddress = $event"
         />
         <copy-button
@@ -132,6 +134,11 @@ export default {
       if (this.atHome) {
         this.$router.push({ name: toName });
       }
+    },
+
+    contactBody() {
+      const serialHistory = this.$router.historyTrace.join(', ');
+      return `%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A______________%0AWeb: ${serialHistory}`;
     },
   },
 };
