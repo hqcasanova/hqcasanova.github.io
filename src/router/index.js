@@ -39,6 +39,9 @@ const router = createRouter({
 // Index for the stage element being shown initially.
 let initStageIdx = -1;
 
+// Global tracking of routes
+router.historyTrace = [];
+
 /**
  * Changes the value of a given CSS style property for all stage elements.
  * @param {String} propName Name of the CSS property.
@@ -73,6 +76,8 @@ router.beforeEach((to, from) => {
     initStageIdx = routeNames.indexOf(to.name);
     stageUpdate('transition', 'transform 2s ease-in-out');
   }
+
+  router.historyTrace.push(to.fullPath);
 });
 
 export default router;
