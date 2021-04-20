@@ -313,7 +313,7 @@ export default {
       .item-img {
         width: 100%;
         height: 40vh;
-        transition: all $medium-transition linear;
+        transition: opacity $medium-transition linear, transform $medium-transition linear;
       }
 
       .dilute-img .item-img {
@@ -334,7 +334,7 @@ export default {
         height: 100%;
         background: rgba(0, 0, 0, .25);
         transform: scale(0.8);
-        transition: all $medium-transition linear;
+        transition: opacity $medium-transition linear, transform $medium-transition linear;
 
         &:hover, &:focus {
           background: rgba(0, 0, 0, .25);
@@ -374,12 +374,18 @@ export default {
         display: flex;
         align-items: center;
 
-        &:before {
+        &:before, &:after {
           content: '';
           opacity: 0;
-          z-index: 1;
           display: block;
           position: absolute;
+          transition:
+            opacity ($long-transition + $medium-transition) linear,
+            transform ($long-transition + $medium-transition) linear;
+        }
+
+        &:before {
+          z-index: 1;
           top: calc(50% + .8em);
           right: calc(25% + .2em);
           width: 20%;
@@ -390,14 +396,9 @@ export default {
             $white 50%,
             var(--primary-colour) 80%
           );
-          transition: all ($long-transition + $medium-transition) linear;
         }
 
         &:after {
-          content: '';
-          opacity: 0;
-          display: block;
-          position: absolute;
           top: calc(50% + .56em);
           right: 50%;
           width: .6em;
@@ -405,13 +406,12 @@ export default {
           background: var(--primary-colour);
           border-radius: 50%;
           transform: translateX(5vw);
-          transition: all ($long-transition + $medium-transition) linear;
         }
 
         &.caption-in {
           &:before {
             opacity: 1;
-            width: 25%;
+            transform: scaleX(1.5);
           }
           &:after {
             opacity: 1;
