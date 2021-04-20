@@ -7,7 +7,7 @@
   <title><%= VUE_APP_META_TITLE %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
   <meta property="dc:language" content="en" />
-  <meta property="dc:date" content="2021-03-14T12:00:00" />
+  <meta property="dc:date" content="2021-04-14T12:00:00" />
   <meta property="dc:creator" content="HQCasanova" />
   <meta property="dc:description" name="description" content="<%= VUE_APP_META_DESCRIPTION %>"/>
   <meta property="og:description" name="description" content="<%= VUE_APP_META_DESCRIPTION %>"/>
@@ -317,6 +317,9 @@
       transform: translateX(-100%);
       animation: clouds-crossing linear infinite;
     }
+    body:not(.at-home) .clouds-picture {
+      animation-play-state: paused;
+    }
 
     .clouds-fg {
       animation-duration: 160s;
@@ -448,6 +451,9 @@
       animation-timing-function: linear;
       animation-delay: .35s;
     }
+    .stage-ready.app-loaded:not(.at-about) .mobile-loaded.hero-loaded .mobile {
+      animation-play-state: paused;
+    }
 
     /* Starts from behind the moon and with rotation so that, when in front, it looks straight */
     @keyframes orbit-animation {
@@ -552,7 +558,7 @@
 
     /* Traces the hero image in... */ 
     .stage-ready svg.stage-hero {
-      animation: hero-draw 4s linear forwards
+      animation: hero-draw 4s linear forwards;
     } 
     @keyframes hero-draw {
       100% {
@@ -910,12 +916,19 @@
         var currRoute = '';
         var stageEl = null;
 
+        // Extracts the first hop in the path as a potentially valid route.
         if (isHash) {
-          currRoute = location.hash.replace('#/', '');
+          currRoute = location.hash;
         } else {
-          currRoute = location.pathname.replace('/', '');
+          currRoute = location.pathname;
+        }
+        try {
+          currRoute = currRoute.match(/^#?\/([^\/]*)/)[1];
+        } catch (error) {
+          currRoute = 'home';
         }
 
+        // Checks validity by finding a similarly identified DOM element.
         stageEl = document.getElementById(currRoute);
         if (!document.body.contains(stageEl)) {
             stageEl = document.getElementById('home');
@@ -968,15 +981,22 @@
      */
     var getLocale = function (isLocalStorage) {
       var language = '';
+      var langSupported = <%= VUE_APP_LANGUAGES %>;
       var localeValue = localStorage.getItem(window.hqcLocaleKey);
       
       // Just grabs whatever previous copy of locale is available
       if (localeValue) {
         return Promise.resolve(JSON.parse(localeValue));
 
-      // No previous copy => fetches remote locale and remembers it if localStore available
+      // No previous copy => fetches remote locale matching browser's and remembers it if localStore available
       } else {
+        
+        //If browser's language undetectable or unsupported, it defaults to English.
         language = (navigator.userLanguage || (navigator.languages && navigator.languages.length && navigator.languages[0]) || navigator.language || navigator.browserLanguage || navigator.systemLanguage || 'en').split('-', 1)[0];
+        if (langSupported.every(function (lang) { return lang.code !== language })) {
+          language = 'en';
+        }
+        
         return window.hqcFetchLocale(language)
         .then(function (data) {
           if (isLocalStorage) {

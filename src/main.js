@@ -5,6 +5,7 @@ import router from './router';
 import store from './store';
 
 // 3rd PARTY PLAIN JS
+require('intersection-observer');
 require('swiped-events');
 const ClipboardJS = require('clipboard');
 

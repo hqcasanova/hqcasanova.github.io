@@ -32,7 +32,9 @@
         <home-link class="section-home-link" />
       </li>
       <li v-if="locale">
-        <router-link class="section-link"
+        <router-link
+          class="section-link"
+          :class="{'router-link-active router-link-exact-active': $route.name === 'about'}"
           :to="{name: 'about'}"
           replace
           v-html="atHome ? locale.ctas.about : locale.routes.about"
@@ -40,7 +42,9 @@
         </router-link>
       </li>
       <li v-if="locale">
-        <router-link class="section-link"
+        <router-link
+          class="section-link"
+          :class="{'router-link-active router-link-exact-active': $route.name === 'work'}"
           :to="{name: 'work'}"
           replace
           v-html="atHome ? locale.ctas.work : locale.routes.work"
@@ -48,7 +52,7 @@
         </router-link>
       </li>
       <li class="button-slot contact-slot">
-        <span class="contact-label">{{ locale.ctas.contact }}</span>
+        <span class="contact-label" v-html="locale.ctas.contact"></span>
         <contact-link
           :subject="locale.emailSubject"
           :body="contactBody()"
@@ -132,7 +136,7 @@ export default {
   methods: {
     onSwipe(toName) {
       if (this.atHome) {
-        this.$router.push({ name: toName });
+        this.$router.replace({ name: toName });
       }
     },
 
@@ -144,18 +148,6 @@ export default {
 };
 </script>
 
-<!-- For dynamic markup off the template -->
-<style lang="scss">
-i {
-  display: inline-block;
-  margin-bottom: -0.3em;
-  text-transform: uppercase;
-
-  @include accented-first-letter;
-}
-</style>
-
-<!-- For markup in the template -->
 <style lang="scss" scoped>
 .menu {
   display: flex;
@@ -222,13 +214,6 @@ i {
     backface-visibility: hidden;
     list-style: none;
     text-align: center;
-
-    a, select, svg {
-      transition:
-        color $short-transition linear,
-        background-color $short-transition linear,
-        border-color $short-transition linear;
-    }
   }
 
   .menu-sections {
@@ -342,30 +327,16 @@ i {
       }
 
       .section-link {
-        display: block;
         margin-bottom: 0;
-        padding: 0.6em 1em;
         font-size: 1em;
         font-family: inherit;
         font-weight: 400;
-        text-transform: none;
-        white-space: nowrap;
-        color: $primary;
-        background-color: $white;
-        border: .05em solid $white;
+
+        @include primary-button;
 
         &:first-letter {
           font: inherit;
           vertical-align: inherit;
-        }
-
-        &:after {
-          display: none;
-        }
-
-        &:hover, &:focus, &.router-link-exact-active {
-          background-color: #fff;
-          border-color: $primary;
         }
       }
     }

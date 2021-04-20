@@ -1,5 +1,8 @@
 <template>
-  <section v-if="locale">
+  <section
+    v-if="locale"
+    :class="{'modal-shown': isModal}"
+  >
     <message-toast
       class="global-toast"
       :title="errTitle"
@@ -18,7 +21,7 @@
         @leave="isTransitioning = true"
         @enter="isTransitioning = false"
       >
-        <component :is="Component" />
+        <component :is="Component" @click="onClick" />
       </transition>
     </router-view>
   </section>
@@ -43,6 +46,13 @@ export default {
     };
   },
 
+  computed: {
+    isModal() {
+      const routeParams = this.$route.params;
+      return routeParams.constructor === Object && Object.values(routeParams).some(Boolean);
+    },
+  },
+
   setup() {
     const { locale } = useI8n();
     const { errTitle, errMessage } = useError();
@@ -51,6 +61,24 @@ export default {
       errTitle,
       errMessage,
     };
+  },
+
+  methods: {
+    /**
+     * Supports regular anchor tags with an href pointing to an internal route. Without this
+     * logic the app would refresh.
+     * @param {Object} event - DOM event triggered after the click.
+     */
+    onClick(event) {
+      const targetEl = event.target;
+      const link = targetEl.getAttribute('href');
+      const isRouterLink = targetEl.classList.contains('router-link-active');
+
+      if (link && !isRouterLink && this.$router.resolve(link).name) {
+        event.preventDefault();
+        this.$router.replace(link);
+      }
+    },
   },
 };
 </script>
@@ -94,17 +122,17 @@ export default {
   }
 }
 
+/* Markdown-driven font effect for locale text */
+i {
+  display: inline-block;
+  margin-bottom: -0.3em;
+  text-transform: uppercase;
+
+  @include accented-first-letter;
+}
+
 /* Global layout */
-section {
-  position: absolute;
-  overflow-x: hidden;
-  overflow-y: auto;
-  overscroll-behavior: none;
-  top: 0;
-  bottom: $bar-height;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+section, .modal {
   scrollbar-color: $primary $darker-grey;
 
   &::-webkit-scrollbar {
@@ -120,9 +148,32 @@ section {
   &::-webkit-scrollbar-thumb {
     background: $primary;
   }
+}
+
+section {
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: none;
+  top: 0;
+  bottom: $bar-height;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &.modal-shown {
+    overflow-y: hidden;
+  }
 
   .message-toast.global-toast {
     z-index: 100;
+  }
+
+  a, select, svg, .button {
+    transition:
+      color $short-transition linear,
+      background-color $short-transition linear,
+      border-color $short-transition linear;
   }
 
   .content {
@@ -150,24 +201,21 @@ section {
       @include accented-first-letter;
     }
 
-    a, .inline-section-link {
-      color: lighten($secondary, 10%);
-    }
-
     a {
+      color: lighten($secondary, 10%);
       text-decoration: underline;
       text-decoration-thickness: 1px;
       text-underline-offset: 1px;
       text-decoration-skip: edges;
     }
 
-    .inline-section-link {
-      cursor: pointer;
+    i a {
+      text-decoration: none;
       @include absolute-underline(lighten($secondary, 10%));
     }
   }
 
-  a:focus, button:focus, .inline-section-link:focus {
+  a:focus, button:focus {
     background-color: rgba($lighter-grey, .2);
     border-radius: .3em;
   }

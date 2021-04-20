@@ -15,7 +15,7 @@
         >
           {{title}}
         </span>
-        <button class="toast-close" @click="onClick">&times;</button>
+        <button class="toast-close" @click="onClick"></button>
       </div>
       <p v-if="body" class="toast-body">{{body}}</p>
       <button class="toast-ok" @click="onClick">{{ okLabel }}</button>
@@ -83,11 +83,11 @@ export default {
   margin: 0 1rem;
   padding: 1.3em 1em;
   text-align: center;
-  background: $white;
-  color: lighten($dark-grey, 20%);
   border: .3em solid rgba($error, .6);
   border-radius: .6em;
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+
+  @include modal-colours;
 
   &.slide-enter-from, &.slide-leave-to {
     transform: translateY(calc(-100% - 1rem));
@@ -103,21 +103,11 @@ export default {
   }
 
   .toast-heading {
+    margin-right: .35em;
     font-family: serif;
     font-size: .9em;
 
-    &:before {
-      content: attr(data-icon);
-      display: inline-block;
-      line-height: 1.5em;
-      width: 1.5em;
-      margin-right: .35em;
-      font-size: 2.5em;
-      font-weight: 700;
-      border-radius: 50%;
-      background-color: $error;
-      color: $white;
-    }
+    @include char-bubble;
 
     .toast-title {
       display: block;
@@ -139,14 +129,7 @@ export default {
       position: absolute;
       top: 0;
       right: 0;
-      padding: .1em .5em;
-      font-size: 1.75em;
-      color: $light-grey;
-      transition: color $short-transition linear;
-
-      &:focus, &:hover {
-        color: $dark-grey;
-      }
+      @include close-button;
     }
 
     @media (orientation: landscape) {

@@ -10,6 +10,7 @@
     "request": "Error del servidor",
     "language": "No se pudo obtener los datos del idioma. ¿Quizás no tiene conexión?",
     "pageNotFound": "No se pudo encontrar la página. Prueba con una de las secciones.",
+    "projectNotFound": "No se pudo encontrar el proyecto. Prueba con la lista de <a href=\"/work\">todos los proyectos</a>.",
     "ok": "Aceptar"
   },
   "loading": "Cargando...",
@@ -33,29 +34,39 @@
   "content": {
     "about": [
       "En inglés se dice que &quot;el cielo es el límite&quot;. Yo siempre tiro hacia la luna &#128512;.",
-      "Hola. Mi nombre es Héctor. Soy <strong>ingeniero frontend</strong> con formación académica en Java científico y más de <strong>5 años</strong> de experiencia profesional sólo en el Reino Unido. He ayudado a crear diversas <a href=\"https://es.wikipedia.org/wiki/Single-page_application\">SPAs</a> de gran escala: desde una <a aria-label=\"Experiencia – Hevnly\" data-cooltipz-dir=\"bottom\" href=\"/work/3\">tienda online</a> responsive para una startup en Londres hasta un <a aria-label=\"Experiencia – CENtree\" data-cooltipz-dir=\"bottom\" href=\"/work/3\">gestor de ontologías</a> para grandes farmacéuticas en Cambridge. Mi fuerte actual es <a aria-label=\"Wikipedia\" data-cooltipz-dir=\"bottom\" href=\"https://es.wikipedia.org/wiki/Vue.js\"><strong>Vue.js</strong>.</a>",
-      "Me considero un creativo que normalmente se mueve en la frontera entre <strong>UX y código</strong>, sirviendo de enlace con el equipo de diseño o el product manager. Mi objetivo final es lograr el equilibrio entre la complejidad del código y la experiencia de usuario, dejando que esta última dirija el desarrollo tanto como sea posible. En esencia, la perspectiva global importa. Por eso me encantan los paisajes amplios.",
-      "Para más detalles sobre formación academica, visita my perfil en <a href=\"https://uk.linkedin.com/in/hqcasanova/es\">Linkedin</a>. En cuanto a proyectos recientes, visita la sección <i class=\"inline-section-link\">experiencia</i>."
+      "¡Hola! Mi nombre es Héctor. Soy <strong>ingeniero frontend</strong> de JavaScript con formación universitaria en programación científica y más de <strong>5 años</strong> de experiencia profesional sólo en el Reino Unido. He ayudado a crear diversas <a aria-label=\"Wikipedia\"  data-cooltipz-dir=\"bottom\" href=\"https://es.wikipedia.org/wiki/Single-page_application\">SPAs</a> de gran escala: desde una <a aria-label=\"Experiencia – Hevnly\" data-cooltipz-dir=\"bottom\" href=\"/work/hevnly\">tienda online</a> responsive para una startup en Londres hasta un <a aria-label=\"Experiencia – CENtree\" data-cooltipz-dir=\"bottom\" href=\"/work/centree\">gestor de ontologías</a> para multinacionales farmacéuticas en Cambridge. Mi fuerte actual es <a aria-label=\"Wikipedia\" data-cooltipz-dir=\"bottom\" href=\"https://es.wikipedia.org/wiki/Vue.js\"><strong>Vue.js</strong>.</a>",
+      "Me considero un creativo que normalmente se mueve en la frontera entre <strong>UX y código</strong>, sirviendo de enlace con el equipo de diseño o el product manager. Mi objetivo final es lograr el equilibrio entre la complejidad del código y la experiencia de usuario, dejando que esta última dirija el desarrollo tanto como sea posible. En esencia, la perspectiva global importa. Por eso me encantan las vistas amplias.",
+      "Para más detalles sobre mi formación academica, visita mi perfil en <a href=\"https://uk.linkedin.com/in/hqcasanova/es\">Linkedin</a>. En cuanto a proyectos recientes, visita la sección <i><a href=\"/work\">experiencia</a></i>."
     ],
-    "work": [
-      {
-        "name": "CENtree",
-        "period": "Aug 2018 - Aug 2020",
-        "framework": "Vue",
-        "description": "Como ingeniero de UX en <a href=\"https://www.scibite.com/\">SciBite</a> fuí responsable de todos los aspectos del SPA de CENtree. Ésta es una nueva plataforma de gestión de <a aria-label=\"Wikipedia\"  data-cooltipz-dir=\"bottom\" href=\"https://es.wikipedia.org/wiki/Ontolog%C3%ADa_(inform%C3%A1tica)\">ontologías</a> que mejora las características familiares del <a href=\"https://www.ebi.ac.uk/ols\">Servicio de Búsqueda de Ontologías</a> del <a href=\"https://www.ebi.ac.uk\">Instituto Europeo de Bioinformática</a> y las amplía con funciones novedosas como vistas previas de términos en línea, edición de árbol WYSIWYG o grafos en tiempo real de todas las relaciones. Todo implementado en Vue JS para adaptarse tanto a los itinerarios de descubrimiento como a los más específicos mientras se preserva la simplicidad. Estaba dirigido a científicos con una formación técnica mixta. Más allá de CENtree, también me involucré con otros grupos dentro de la empresa para alinear la identidad y experiencia de cliente que ofrecen las aplicaciones en el ecosistema SciBite."
-      },
-      {
-        "name": "BioStudies",
-        "period": "Aug 2017 - Aug 2018",
-        "framework": "Angular",
-        "description": "Fuí el ingeniero frontend y diseñador de UX dentro del grupo <a href=\"https://www.ebi.ac.uk/biostudies/\">Biostudies</a> del <a href=\"https://www.ebi.ac.uk\">Insituto Europeo de Bioinformática</a>. Escrita en Angular, su SPA de envío y validación se basa en gran medida en formularios dinámicos para soportar estudios genéricos que no son atendidos por ningún otro servicio de EBI. Mi misión era mejorar la confiabilidad general y el carácter intuitivo de la aplicación así como implementar nuevas funciones, como una lista de verificación de formularios en tiempo real, grupos de validación o subida masiva de archivos."
-      },
-      {
-        "name": "Hevnly",
-        "period": "Nov 2014 - Julio 2017",
-        "framework": "Backbone/Marionette",
-        "description": "Como desarrollador principal del equipo de frontend en <a href=\"https://github.com/hevnly\">Hevnly</a>, llegué a ser responsable de la mayor parte de la interfaz de la SPA para la tienda. También desarrollé toda la aplicación de back-office para proveedores y ayudé a mejorar y extender la aplicación de la revista. Algunas características innovadoras que tuve la oportunidad de implementar incluyeron filtrado optimista, almacenamiento en caché local y una matriz de productos recursiva con reconocimiento de existencias."
-      }
-    ]
+    "work": {
+      "list": [
+        {
+          "name": "centree",
+          "title": "<i>C</i><i>E</i><i>Ntree</i>",
+          "period": "Agosto 2018 - agosto 2020",
+          "description": "Como ingeniero de UX en <a href=\"https://www.scibite.com/\">SciBite</a> fuí responsable de todos los aspectos del SPA de CENtree. Ésta es una nueva plataforma de gestión de <a aria-label=\"Wikipedia\"  data-cooltipz-dir=\"bottom\" href=\"https://es.wikipedia.org/wiki/Ontolog%C3%ADa_(inform%C3%A1tica)\">ontologías</a> que mejora las características familiares del <a href=\"https://www.ebi.ac.uk/ols\">Servicio de Búsqueda de Ontologías</a> del <a href=\"https://www.ebi.ac.uk\">Instituto Europeo de Bioinformática</a> y las amplía con funciones novedosas como vistas previas de términos en línea, edición de árbol WYSIWYG o grafos en tiempo real de todas las relaciones. Todo implementado en Vue JS para adaptarse tanto a los itinerarios de descubrimiento como a los más específicos mientras se preserva la simplicidad. El usuario tipo eran científicos con una formación técnica mixta. Más allá de CENtree, también me involucré con otros grupos dentro de la empresa para alinear la identidad y experiencia de cliente que ofrecen las aplicaciones en el ecosistema SciBite."
+        },
+        {
+          "name": "docstore",
+          "title": "<i>D</i><i>O</i><i>Cstore</i>",
+          "period": "Diciembre 2019 - agosto 2020",
+          "description": "Como parte de mi misión más amplia de re-alinear las interfaces de todo <a href=\"https://www.scibite.com/\">SciBite</a>, ayudé a rediseñar la aplicación DOCstore, un motor de búsqueda inteligente que aprovecha la indexación de entidades para simplificar el proceso de búsqueda en literatura científica de resultados semánticamente relevantes. El perfil característico iba desde el técnico de laboratorio que realizaba una única búsqueda específica hasta el científico biomédico que buscaba relaciones sin un objetivo preconcebido. Dado que tanto el control detallado como la simplicidad eran primordiales, se adoptó un enfoque progresivo en el que los elementos de la interfaz de usuario especializados se presentaban de forma incremental a medida que el usuario avanzaba en su búsqueda. Un ejemplo destacado de esto fue el auto-completado o búsqueda por adelantado, cuya rica interfaz fue diseñada para permitir dos modos de búsqueda (entidad y documento) evitando la sobrecarga cognitiva tanto como fuera posible."
+        },
+        {
+          "name": "biostudies",
+          "title": "<i>Bio</i><i>Studies</i>",
+          "period": "Agosto 2017 - agosto 2018",
+          "description": "Fuí el ingeniero frontend y diseñador de UX dentro del grupo <a href=\"https://www.ebi.ac.uk/biostudies/\">Biostudies</a> del <a href=\"https://www.ebi.ac.uk\">Insituto Europeo de Bioinformática</a>. Desarrollada en Angular, su SPA de envío y validación se basa en gran medida en formularios dinámicos para soportar estudios genéricos que no son atendidos por ningún otro servicio de EBI. Mi misión era mejorar la confiabilidad general y el carácter intuitivo de la aplicación así como implementar nuevas funciones, como una lista de verificación de formularios en tiempo real, grupos de validación o subida masiva de archivos."
+        },
+        {
+          "name": "hevnly",
+          "title": "<i>Hevnly</i>",
+          "period": "Noviembre 2014 - julio 2017",
+          "description": "Como desarrollador principal del equipo de frontend en Hevnly, llegué a ser responsable de la mayor parte de la interfaz de la SPA para la tienda. También desarrollé toda la aplicación de back-office para proveedores y ayudé a mejorar y extender la aplicación de la revista. Algunas características innovadoras que tuve la oportunidad de implementar incluyeron filtrado optimista, almacenamiento en caché local y una matriz de productos recursiva con reconocimiento de existencias."
+        }
+      ],
+      "links": "Para una lista completa de mi vida laboral, visita mi perfil en <a href=\"https://uk.linkedin.com/in/hqcasanova/es\">LinkedIn</a>. Para saber más sobre mí, visita la sección <i><a href=\"/about\">acerca</a></i>.",
+      "back": "Todos los proyectos"
+    }
   }
 }
