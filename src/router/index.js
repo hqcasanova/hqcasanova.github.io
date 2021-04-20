@@ -16,9 +16,10 @@ const routes = [
     props: (route) => ({ is404: route.params.is404 === 'true' }),
   },
   {
-    path: '/work',
+    path: '/work/:selectedName?',
     name: 'work',
     component: Work,
+    props: true,
   },
   {
     path: '/:pathMatch(.*)*',
@@ -77,6 +78,8 @@ router.beforeEach((to, from) => {
     stageUpdate('transition', 'transform 2s ease-in-out');
   }
 
+  document.body.classList.remove(`at-${from.name}`);
+  document.body.classList.add(`at-${to.name}`);
   router.historyTrace.push(to.fullPath);
 });
 

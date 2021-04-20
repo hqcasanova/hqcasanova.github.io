@@ -5,7 +5,6 @@
       v-for="(paragraph, index) in locale.content.about"
       v-html="paragraph"
       :key="index"
-      @click="onClick"
     >
     </p>
   </div>
@@ -22,20 +21,6 @@ export default {
     return {
       locale,
     };
-  },
-
-  methods: {
-    onClick(event) {
-      const targetEl = event.target;
-      const localRoutes = this.locale.routes;
-      const routeNames = Object.keys(localRoutes);
-      let targetRoute = '';
-
-      if (targetEl.className === 'inline-section-link') {
-        targetRoute = routeNames.find((routeName) => localRoutes[routeName] === targetEl.textContent);
-        this.$router.replace({ name: targetRoute });
-      }
-    },
   },
 };
 </script>

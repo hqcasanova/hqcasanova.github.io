@@ -27,9 +27,60 @@
     content: '';
     display: block;
     position: absolute;
+    top: 1em;
     height: 1px;
     width: 100%;
     background-color: $colour;
-    top: 1.36em;
   } 
+}
+
+@mixin primary-button {
+  display: block;
+  padding: 0.6em 1em;
+  text-transform: none;
+  text-align: center;
+  white-space: nowrap;
+  color: $primary;
+  background-color: $white;
+  border: .05em solid $white;
+  cursor: pointer;
+
+  &:hover, &:focus, &.router-link-exact-active {
+    background-color: #fff;
+    border-color: $primary;
+  }
+}
+
+@mixin close-button($colour: $light-grey, $colour-hover: $dark-grey) { 
+  padding: 0 0.4em;
+  font-size: 2em;
+  color: $colour;
+  transition: color $short-transition linear;
+
+  &:before {
+    content: "\d7";
+  }
+
+  &:focus, &:hover {
+    color: $colour-hover;
+  }
+}
+
+@mixin char-bubble($background: $error, $colour: $white) {
+  &:before {
+    content: attr(data-icon);
+    display: inline-block;
+    line-height: 1.5em;
+    width: 1.5em;
+    font-size: 2.5em;
+    font-weight: 700;
+    border-radius: 50%;
+    color: $colour;
+    background-color: $background;
+  }
+}
+
+@mixin modal-colours {
+  color: lighten($dark-grey, 15%);
+  background: $white;
 }
