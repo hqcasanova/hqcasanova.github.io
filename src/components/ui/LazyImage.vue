@@ -130,6 +130,10 @@ export default {
 
     &.loaded svg {
       animation: hero-undraw 2s linear forwards;
+
+      path {
+        animation: none;
+      }
     }
   }
 }

@@ -75,6 +75,7 @@ export default {
     svg {
       display: block;
       height: 2.65em;
+      padding: .3em;
       width: auto;
     }
   }
