@@ -56,7 +56,7 @@
           "name": "biostudies",
           "title": "<i>Bio</i><i>Studies</i>",
           "period": "Agosto 2017 - agosto 2018",
-          "description": "Fuí el ingeniero frontend y diseñador de UX dentro del grupo <a href=\"https://www.ebi.ac.uk/biostudies/\">Biostudies</a> del <a href=\"https://www.ebi.ac.uk\">Insituto Europeo de Bioinformática</a>. Desarrollada en Angular, su SPA de envío y validación se basa en gran medida en formularios dinámicos para soportar estudios genéricos que no son atendidos por ningún otro servicio de EBI. Mi misión era mejorar la confiabilidad general y el carácter intuitivo de la aplicación así como implementar nuevas funciones, como una lista de verificación de formularios en tiempo real, grupos de validación o subida masiva de archivos."
+          "description": "Fuí el ingeniero frontend y diseñador de UX dentro del grupo <a href=\"https://www.ebi.ac.uk/biostudies/\">Biostudies</a> del <a href=\"https://www.ebi.ac.uk\">Instituto Europeo de Bioinformática</a>. Desarrollada en Angular, su SPA de envío y validación se basa en gran medida en formularios dinámicos para soportar estudios genéricos que no son procesados por ningún otro servicio de EBI. Mi misión era mejorar la confiabilidad general y el carácter intuitivo de la aplicación, así como implementar nuevas funciones. Por ejemplo, una lista de verificación de formularios en tiempo real, grupos de validación o subida masiva de archivos."
         },
         {
           "name": "hevnly",
