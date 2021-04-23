@@ -390,6 +390,7 @@ export default {
           right: calc(25% + .2em);
           width: 20%;
           height: .1em;
+          background: $white;
           background: linear-gradient(
             -90deg,
             $white 0%,
@@ -403,6 +404,7 @@ export default {
           right: 50%;
           width: .6em;
           height: .6em;
+          background: $white;
           background: var(--primary-colour);
           border-radius: 50%;
           transform: translateX(5vw);
