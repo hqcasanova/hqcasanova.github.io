@@ -253,10 +253,12 @@
     }
 
     .fg-bottom {
+      display: none;
       height: 28%;
     }
 
     .fg-top {
+      display: none;
       height: 17.6%;
     }
 
@@ -277,19 +279,26 @@
       transition: opacity 1s ease-in;
     }
 
-    .fg-bottom img {
-      -webkit-clip-path: polygon(
-        0 60.29%, 
-        100% 6.54%, 
-        100% 100%, 
-        0% 100%
-      );
-      clip-path: polygon(
-        0 60.29%, 
-        100% 6.54%, 
-        100% 100%, 
-        0% 100%
-      );
+    /* Shows foreground only if clip-path support poor (IE Edge) */
+    @supports(-webkit-clip-path: polygon(0 60.29%, 100% 6.54%, 100% 100%, 0% 100%)) or (clip-path: polygon(0 60.29%, 100% 6.54%, 100% 100%, 0% 100%)) {
+      .fg-bottom, .fg-top {
+        display: block;
+      }
+      
+      .fg-bottom img {
+        -webkit-clip-path: polygon(
+          0 60.29%, 
+          100% 6.54%, 
+          100% 100%, 
+          0% 100%
+        );
+        clip-path: polygon(
+          0 60.29%, 
+          100% 6.54%, 
+          100% 100%, 
+          0% 100%
+        );
+      }
     }
 
     /* Home - Bottom passing clouds */
