@@ -20,6 +20,7 @@
         mode="out-in"
         @leave="isTransitioning = true"
         @enter="isTransitioning = false"
+        @after-leave="onAfterLeave"
       >
         <component :is="Component" @click="onClick" />
       </transition>
@@ -65,8 +66,8 @@ export default {
 
   methods: {
     /**
-     * Supports regular anchor tags with an href pointing to an internal route. Without this
-     * logic the app would refresh.
+     * Supports regular anchor tags with an href pointing to an internal route within the language JSON files.
+     * Without this logic the app would of course refresh.
      * @param {Object} event - DOM event triggered after the click.
      */
     onClick(event) {
@@ -78,6 +79,13 @@ export default {
         event.preventDefault();
         this.$router.replace(link);
       }
+    },
+
+    /**
+     * Resets scrolling right before rendering the next view.
+     */
+    onAfterLeave() {
+      this.$el.scrollTop = 0;
     },
   },
 };
