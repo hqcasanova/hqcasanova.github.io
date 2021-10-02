@@ -56,7 +56,7 @@ const stageUpdate = (propName, propValue) => {
 };
 
 /**
- * Programmatically scrolls to the content except during app initialisation.
+ * Programmatically CSS-scrolls to the content except during app initialisation.
  * Additionally, it changes styles for scroll-like CSS transition.
  * NOTE: Safari doesn't support scrollIntoView's "smooth" option.
  * @param {Object} to Data for the next route to navigate to.
