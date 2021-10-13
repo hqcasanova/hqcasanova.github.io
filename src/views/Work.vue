@@ -270,8 +270,6 @@ export default {
   flex-direction: column;
 
   .work-list {
-    display: flex;
-    flex-direction: column;
     list-style: none;
     margin-bottom: 2.5rem;
 
@@ -362,14 +360,6 @@ export default {
 
   @media (min-width: 768px), (orientation: landscape) {
     .work-list {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-
-      .list-item {
-        flex: 1;
-      }
-
       .item-figure {
         display: flex;
         align-items: center;
