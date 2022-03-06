@@ -210,6 +210,8 @@
 
     .home-item {
       position: absolute;
+      -webkit-backface-visibility: hidden; /* forced layer: fix for disappearing imgs during transform on Chrome */ 
+      -webkit-transform: translateZ(0); /* forced layer: fix for disappearing imgs during transform on Chrome */
     }
 
     /* Home - Foreground and background image containers */

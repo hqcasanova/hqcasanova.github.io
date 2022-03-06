@@ -18,11 +18,11 @@
   "ctas": {
     "about": "<i>Acerca</i> de mí",
     "work": "Ver <i>experiencia</i>",
-    "contact": "¿Nuevo proyecto? Envía un email a"
+    "contact": "¿Nuevo proyecto? Sígueme en"
   },
   "copy": {
-    "action": "Copiar dirección de email",
-    "success": "Dirección de email copiada"
+    "action": "Copiar URL de LinkedIn",
+    "success": "URL de LinkedIn copiada"
   },
   "urls": {
     "linkedin": "https://uk.linkedin.com/in/hqcasanova/es"
