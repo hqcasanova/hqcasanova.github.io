@@ -11,19 +11,6 @@
       class="menu-home-link"
       :isLogo="true"
     />
-    <span class="menu-contact-wrapper">
-      <contact-link
-        class="menu-contact-link"
-        :subject="locale.emailSubject"
-        :body="contactBody()"
-      />
-      <copy-button
-        :copyText="contactAddress"
-        :actionText="locale.copy.action"
-        :successText="locale.copy.success"
-        tooltipDirection="bottom"
-      />
-    </span>
     <ul
       class="menu-group menu-sections"
       ref="menuSections"
@@ -53,13 +40,9 @@
       </li>
       <li class="button-slot contact-slot">
         <span class="contact-label" v-html="locale.ctas.contact"></span>
-        <contact-link
-          :subject="locale.emailSubject"
-          :body="contactBody()"
-          @mounted="contactAddress = $event"
-        />
+        <a class="contact-link" :href="locale.urls.linkedin">LinkedIn</a>
         <copy-button
-          :copyText="contactAddress"
+          :copyText="locale.urls.linkedin"
           :actionText="locale.copy.action"
           :successText="locale.copy.success"
           tooltipDirection="top"
@@ -73,7 +56,6 @@
 <script>
 import HomeLink from '@/components/ui/HomeLink.vue';
 import MenuUtils from '@/components/layout/MenuUtils.vue';
-import ContactLink from '@/components/ui/ContactLink.vue';
 import CopyButton from '@/components/ui/CopyButton.vue';
 import useI8n from '@/composables/useI8n';
 
@@ -83,7 +65,6 @@ export default {
   components: {
     HomeLink,
     MenuUtils,
-    ContactLink,
     CopyButton,
   },
 
@@ -107,7 +88,6 @@ export default {
   data() {
     return {
       isHeaderChange: false,
-      contactAddress: '',
     };
   },
 
@@ -364,6 +344,10 @@ export default {
   }
 
   &.transition-end:not(.at-home) {
+    .contact-slot {
+      display: none;
+    }
+
     @media (min-width: 768px) and (min-height: 450px) {
       .menu-contact-wrapper {
         display: none;

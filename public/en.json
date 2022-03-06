@@ -18,11 +18,11 @@
   "ctas": {
     "about": "More <i>about</i> me",
     "work": "View my <i>work</i>",
-    "contact": "New project? Email me at"
+    "contact": "New project? Reach me on"
   },
   "copy": {
-    "action": "Copy email address",
-    "success": "Email address copied"
+    "action": "Copy LinkedIn URL",
+    "success": "LinkedIn URL copied"
   },
   "urls": {
     "linkedin": "https://uk.linkedin.com/in/hqcasanova"
