@@ -1,7 +1,7 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import About from '../views/About.vue';
-import Work from '../views/Work.vue';
+import Work from '../views/Work/Work.vue';
 
 const routes = [
   {
@@ -13,13 +13,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home,
-    props: (route) => ({ is404: route.params.is404 === 'true' }),
   },
   {
     path: '/work/:selectedName?',
     name: 'work',
     component: Work,
-    props: true,
   },
   {
     path: '/:pathMatch(.*)*',

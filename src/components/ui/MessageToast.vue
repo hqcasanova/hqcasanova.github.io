@@ -1,36 +1,76 @@
 <template>
-  <transition class="message-toast" name="slide">
+  <transition
+    class="message-toast"
+    name="slide"
+    :css="isAnimated"
+  >
     <div
       v-if="!isEmpty"
-      class="toast"
-      :class="{'info': isInfo}"
+      ref="target"
+      :class="['toast', { 'info': isInfo }]"
+       @keydown.esc="onClick"
     >
-      <div
-        class="toast-heading"
-        :data-icon="isInfo ? infoIcon : errorIcon"
+      <focus-trap
+        :active="true"
+        :escapeDeactivates="false"
+        :initial-focus="() => $refs.okButton"
       >
-        <span
-          class="toast-title"
-          :class="{'only-heading': !body.length}"
-        >
-          {{title}}
-        </span>
-        <button class="toast-close" @click="onClick"></button>
-      </div>
-      <p v-if="body" class="toast-body">{{body}}</p>
-      <button class="toast-ok" @click="onClick">{{ okLabel }}</button>
+        <div>
+          <div
+            class="toast-heading"
+            :data-icon="isInfo ? infoIcon : errorIcon"
+          >
+            <span
+              :class="['toast-title', { 'only-heading': !body.length }]"
+              v-html="title"
+            />
+          </div>
+          <p v-if="body" class="toast-body">{{ body }}</p>
+          <template v-if="isButtons">
+            <button
+              ref="okButton"
+              class="toast-ok secondary-btn"
+              @click="onClick"
+            >
+              {{ okLabel }}
+            </button>
+            <button
+              class="toast-close"
+              @click="onClick"
+            />
+          </template>
+        </div>
+      </focus-trap>
     </div>
   </transition>
 </template>
 
 <script>
+import { ref } from 'vue';
+import useClickOutside from '@/composables/useClickOutside';
+import { FocusTrap } from 'focus-trap-vue';
+
 export default {
   name: 'MessageToast',
 
+  components: {
+    FocusTrap,
+  },
+
   props: {
+    isAnimated: {
+      type: Boolean,
+      default: true,
+    },
+
     isInfo: {
       type: Boolean,
       default: false,
+    },
+
+    isButtons: {
+      type: Boolean,
+      default: true,
     },
 
     infoIcon: {
@@ -57,6 +97,11 @@ export default {
       type: String,
       default: 'OK',
     },
+
+    closeEventName: {
+      type: String,
+      default: 'close',
+    },
   },
 
   computed: {
@@ -65,9 +110,30 @@ export default {
     },
   },
 
+  watch: {
+    isEmpty: {
+      handler(isClosed) {
+        document.body.classList.toggle('toast-shown', !isClosed);
+      },
+      immediate: true,
+    },
+  },
+
+  setup(props, context) {
+    const target = ref();
+
+    useClickOutside(target, () => {
+      context.emit(props.closeEventName);
+    });
+
+    return {
+      target,
+    };
+  },
+
   methods: {
     onClick() {
-      this.$emit('close');
+      this.$emit(this.closeEventName);
     },
   },
 };
@@ -103,7 +169,6 @@ export default {
   }
 
   .toast-heading {
-    margin-right: .35em;
     font-family: serif;
     font-size: .9em;
 
@@ -117,24 +182,20 @@ export default {
       color: lighten($dark-grey, 12%);
 
       &.only-heading {
-        font-family: sans-serif;
-        font-size: 1.35em;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1.25em;
         text-transform: none;
       }
 
-      @include accented-first-letter;
-    }
-
-    .toast-close {
-      position: absolute;
-      top: 0;
-      right: 0;
-      @include close-button;
+      &:first-letter {
+        @include accented-text;
+      }
     }
 
     @media (orientation: landscape) {
       .toast-title {
         display: inline-block;
+        margin-left: .3em;
       }
     }
   }
@@ -146,18 +207,14 @@ export default {
 
   .toast-ok {
     margin-top: 1.2em;
-    padding: 0.8em 2em;
-    font-size: .9em;
-    text-transform: uppercase;
-    border-radius: 20%/50%;
-    border: .2em solid $primary;
-    color: $primary;
-    transition: all $short-transition linear;
+    color: darken($secondary, 12%);
+  }
 
-    &:focus, &:hover {
-      background-color: $primary;
-      color: $white;
-    }
+  .toast-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include close-button;
   }
 
   &.info {
@@ -165,16 +222,6 @@ export default {
 
     .toast-heading:before {
       background-color: $info;
-    }
-
-    .toast-ok {
-      border-color: $info;
-      color: $info;
-
-      &:focus, &:hover {
-        background-color: $info;
-        color: $white;
-      }
     }
   }
 

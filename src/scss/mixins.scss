@@ -1,9 +1,7 @@
-@mixin accented-first-letter {
-  &:first-letter {
-    font-family: 'Accent';
-    font-size: 1.3em;
-    vertical-align: .188em;
-  }
+@mixin accented-text {
+  font-family: 'Accent';
+  font-size: 1.3em;
+  vertical-align: .188em;
 }
 
 @mixin bottom-bar {
@@ -34,31 +32,55 @@
   } 
 }
 
-@mixin primary-button {
-  display: block;
+@mixin button-base {
   padding: 0.6em 1em;
-  text-transform: none;
   text-align: center;
   white-space: nowrap;
-  color: $primary;
-  background-color: $white;
-  border: .05em solid $white;
+  border: .125em solid transparent;
+  border-radius: .5em;
   cursor: pointer;
+}
+
+@mixin primary-button {
+  @include button-base;
+  color: $white;
+  border-color: $primary;
+  background-color: $primary;
 
   &:hover, &:focus, &.router-link-exact-active {
-    background-color: #fff;
-    border-color: $primary;
+    background-color: $secondary;
+    border-color: $secondary;
   }
 }
 
-@mixin close-button($colour: $light-grey, $colour-hover: $dark-grey) { 
-  padding: 0 0.4em;
+@mixin secondary-button {
+  @include button-base;
+  color: $primary;
+  border-color: $primary;
+
+  &:hover, &:focus, &.router-link-exact-active {
+    color: $secondary;
+    border-color: $secondary;
+  }
+}
+
+@mixin close-button($colour: lighten($dark-grey, 15%), $colour-hover: $black) { 
+  width: 1.25em;
+  line-height: 1.25em;
   font-size: 2em;
   color: $colour;
+  text-align: center;
+  text-decoration: none;
+  border-radius: .3em;
   transition: color $short-transition linear;
 
   &:before {
     content: "\d7";
+  }
+
+  &:focus {
+    box-shadow: 0 .2em .6em lighten($secondary, 10%);
+    text-shadow: none;
   }
 
   &:focus, &:hover {
@@ -70,6 +92,7 @@
   &:before {
     content: attr(data-icon);
     display: inline-block;
+    margin: 0 auto;
     line-height: 1.5em;
     width: 1.5em;
     font-size: 2.5em;
@@ -83,4 +106,16 @@
 @mixin modal-colours {
   color: lighten($dark-grey, 15%);
   background: $white;
+}
+
+@mixin link-focus($colour: $secondary) {
+  text-shadow:
+    0 0 0.10625em lighten($colour, 20%),
+    0 0 0.625em lighten($colour, 20%),
+    0 0 1.25em lighten($colour, 20%),
+    0 0 2.5em lighten($colour, 10%),
+    0 0 5em lighten($colour, 10%),
+    0 0 5.625em lighten($colour, 10%),
+    0 0 6.25em lighten($colour, 10%),
+    0 0 9.375em lighten($colour, 10%);
 }

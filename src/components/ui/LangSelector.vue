@@ -41,21 +41,21 @@ export default {
 <style lang="scss" scoped>
 .lang-selector {
   display: block;
-  padding: 0.6em 1.6em 0.6em 0.8em;
+  padding: 0.55em 1.4em 0.5em 0.5em;
   width: 100%;
   max-width: 100%;
   margin: 0;
   line-height: 1.3em;
-  color: $white;
+  color: currentColor;
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
   background-image: url(caret-svg());
   background-repeat: no-repeat, repeat;
-  background-position: right 0.7em top 50%, 0 0;
+  background-position: right 0.5em top 50%, 0 0;
   background-size: 0.65em auto, 100%;
   background-color: transparent;
-  border: .125em solid $lighter-grey;
+  border: .16em solid currentColor;
   border-radius: 0.5em;
   cursor: pointer;
 

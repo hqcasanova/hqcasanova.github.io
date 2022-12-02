@@ -87,7 +87,7 @@ export default {
 <style scoped lang="scss">
 .copy-button {
   display: inherit;
-  padding: .45em;
+  padding: .1em;
 
   svg {
     display: block;
