@@ -4,6 +4,8 @@
       class="modal"
       tabindex="-1"
       @keydown.esc="$router.push({ name: routeName })"
+      @keydown.left="onSwipeArrow('prevJob')"
+      @keydown.right="onSwipeArrow('nextJob')"
     >
       <work-details
         class="modal-content"
@@ -156,9 +158,9 @@ export default {
   },
 
   mounted() {
-    this.swipeLeftHandler = this.onSwipe.bind(this, 'nextJob');
+    this.swipeLeftHandler = this.onSwipeArrow.bind(this, 'nextJob');
     document.addEventListener('swiped-left', this.swipeLeftHandler);
-    this.swipeRightHandler = this.onSwipe.bind(this, 'prevJob');
+    this.swipeRightHandler = this.onSwipeArrow.bind(this, 'prevJob');
     document.addEventListener('swiped-right', this.swipeRightHandler);
 
     document.body.classList.add('modal-shown');
@@ -186,14 +188,14 @@ export default {
 
   methods: {
     /**
-     * Navigates to the correct route depending on the swipe direction. It also determines the
+     * Navigates to the correct route depending on the swipe/arrow direction. It also determines the
      * type of navigation so that visits to one or multiple jobs are treated as a single
      * routing event separate from the rest of the app. That way, the browser's back button acts as
      * a modal close when pressed while the modal is open.
      * @param {string} jobObjAction - Name of computed property yielding the data object for the
      * previous or next job.
      */
-    onSwipe(jobObjAction) {
+    onSwipeArrow(jobObjAction) {
       let routerAction;
 
       if (this[jobObjAction].name) {
