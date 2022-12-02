@@ -1,9 +1,13 @@
 <template>
   <div
     class="lazy-image"
-    :class="{'loaded': isLoaded, 'visible': isVisible}"
+    :class="{
+      'loaded': isLoaded,
+      'visible': isVisible,
+      'darkened': isDarkened,
+    }"
   >
-    <img :src="lazySrc" @load="onImgLoad" alt />
+    <img :src="lazySrc" @load="onImgLoad" alt decoding="async" ref="image" />
     <svg role="img" aria-label="rectangle" focusable="false" stroke-width="1" stroke="currentColor" width="300" height="300" preserveAspectRatio="none" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,0 l300,0 M300,0 l0,300 M300,300 l-300,0 M0,300 l0,-300"></path>
     </svg>
@@ -25,12 +29,22 @@ export default {
       type: String,
       required: true,
     },
+
+    initVisible: {
+      type: Boolean,
+      default: false,
+    },
+
+    isDarkened: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   // Notifies the outside world when the image is both loaded and visible.
   setup(props, { emit }) {
     const isLoaded = ref(false);
-    const isVisible = ref(false);
+    const isVisible = ref(props.initVisible);
 
     watch([isVisible, isLoaded], () => {
       if (isVisible.value && isLoaded.value) {
@@ -55,20 +69,24 @@ export default {
   },
 
   mounted() {
-    CONTEXT.set(this.$el, this);
+    if (this.initVisible) {
+      this.$refs.image.decode();
+    } else {
+      CONTEXT.set(this.$el, this);
 
-    if (!OBSERVER) {
-      OBSERVER = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.intersectionRatio > 0) {
-            CONTEXT.get(entry.target).isVisible = true;
-            OBSERVER.unobserve(entry.target);
-          }
+      if (!OBSERVER) {
+        OBSERVER = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.intersectionRatio > 0) {
+              CONTEXT.get(entry.target).isVisible = true;
+              OBSERVER.unobserve(entry.target);
+            }
+          });
         });
-      });
-    }
+      }
 
-    OBSERVER.observe(this.$el);
+      OBSERVER.observe(this.$el);
+    }
   },
 
   unmounted() {
@@ -83,7 +101,11 @@ export default {
     },
 
     cleanup() {
-      OBSERVER.disconnect();
+      const hasDisconnect = OBSERVER && 'disconnect' in OBSERVER;
+
+      if (hasDisconnect) {
+        OBSERVER.disconnect();
+      }
       CONTEXT = new WeakMap();
     },
   },
@@ -100,8 +122,9 @@ export default {
     display: block;
     width: auto;
     height: 100%;
+    transform: translateZ(0px);
 
-    @media (min-width: 768px) {
+    @supports (object-fit: cover) and (object-position: top) {
       min-width: 100%;
       object-position: top;
       object-fit: cover;
@@ -128,11 +151,14 @@ export default {
       animation-delay: 2s;
     }
 
-    &.loaded svg {
-      animation: hero-undraw 2s linear forwards;
+    &.loaded {
+      svg {
+        animation: hero-undraw 2s linear forwards;
+      }
 
-      path {
-        animation: none;
+      &:not(.darkened) svg {
+        transition: opacity 2s ease-out;
+        opacity: 0;
       }
     }
   }

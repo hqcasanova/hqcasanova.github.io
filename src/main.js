@@ -7,6 +7,7 @@ import store from './store';
 // 3rd PARTY PLAIN JS
 require('intersection-observer');
 require('swiped-events');
+require('wicg-inert');
 const ClipboardJS = require('clipboard');
 
 // INSTANTIATION AND GLOBALS
@@ -14,11 +15,11 @@ const app = createApp(App).use(store).use(router);
 app.config.globalProperties.$Clipboard = ClipboardJS;
 
 // ERROR HANDLING
-app.config.errorHandler = function (error, vm, info) {
+app.config.errorHandler = function (error, vm, info) { // eslint-disable-line func-names
   const exception = `${error.toString()}. ${info}`;
   store.dispatch('newError', { source: 'app', exception });
 };
-window.onerror = function (message) {
+window.onerror = function (message) { // eslint-disable-line func-names
   store.dispatch('newError', { source: 'system', exception: message });
 };
 

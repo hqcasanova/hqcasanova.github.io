@@ -3,6 +3,7 @@ import { useStore } from 'vuex';
 
 export default function () {
   const store = useStore();
+  const errIsInfo = computed(() => store.state.error.source.indexOf('NotFound') >= 0);
   const errTitle = computed(() => store.state.i8n.locale.errors[store.state.error.source]);
   const errMessage = computed({
     get() {
@@ -22,6 +23,7 @@ export default function () {
   });
 
   return {
+    errIsInfo,
     errTitle,
     errMessage,
   };

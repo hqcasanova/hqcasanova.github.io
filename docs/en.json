@@ -1,8 +1,8 @@
 {
   "language": "en",
   "routes": {
-    "about": "about",
-    "work": "work"
+    "about": "<i>a</i>bout",
+    "work": "<i>w</i>ork"
   },
   "errors": {
     "app": "App failure",
@@ -10,14 +10,14 @@
     "request": "Server error",
     "language": "Failed to retrieve language data. Perhaps you are offline?",
     "pageNotFound": "That page could not be found. Maybe try one of the sections?",
-    "projectNotFound": "That project could not be found. Maybe it's among the ones on the list of <a href=\"/work\">all projects</a>?",
+    "projectNotFound": "That project could not be found. Maybe check the <a href=\"/work\">full list</a>?",
     "ok": "Dismiss"
   },
   "loading": "Loading...",
   "tagline": "Web applications & UX",
   "ctas": {
-    "about": "More <i>about</i> me",
-    "work": "View my <i>work</i>",
+    "about": "More <i>A</i>BOUT me",
+    "work": "View my <i>W</i>ORK",
     "contact": "New project? Reach me on"
   },
   "copy": {
@@ -28,45 +28,45 @@
     "linkedin": "https://uk.linkedin.com/in/hqcasanova"
   },
   "titles": {
-    "about": "About me",
-    "work": "Work"
+    "about": "<i>A</i>bout me",
+    "work": "<i>W</i>ork"
   },
   "content": {
     "about": [
-      "They say the sky is the limit. I always shoot for the moon though &#128512;.",
-      "Hi! I'm Hector, a JavaScript <strong>frontend engineer</strong> with an <a aria-label=\"Univ. Edinburgh\" data-cooltipz-dir=\"bottom\" href=\"http://www.drps.ed.ac.uk/10-11_Archive_at_01-09-2010/ipp/ptmscdscic1f.htm\">academic</a> background in scientific programming and over <strong>5 years</strong> of professional experience in the UK. I have helped build a diverse set of large-scale <a aria-label=\"Wikipedia entry\"  data-cooltipz-dir=\"bottom\" href=\"https://en.wikipedia.org/wiki/Single-page_application\">single-page apps</a>: from an <a aria-label=\"Work – Hevnly\" data-cooltipz-dir=\"bottom\" href=\"/work/hevnly\">e-commerce platform</a> for a London-based startup to an <a aria-label=\"Work – CENtree\"  data-cooltipz-dir=\"bottom\" href=\"/work/centree\">ontology manager</a> for Big Pharma from scratch. My current expertise is in <a aria-label=\"Wikipedia entry\" data-cooltipz-dir=\"bottom\" href=\"https://en.wikipedia.org/wiki/Vue.js\"><strong>Vue.js</strong></a> but I've also dabbled in <a aria-label=\"Wikipedia entry\" data-cooltipz-dir=\"bottom\" href=\"https://en.wikipedia.org/wiki/Angular_(web_framework)\"><strong>Angular</strong></a>.",
-      "I'm a crafter that normally straddles the boundary between <strong>UX and code</strong>, acting as the link with the design team or product manager. My ultimate aim is to strike a balance between feature complexity and user experience, letting the latter be the true driving force as much as possible. In essence, the big picture matters. That's why I love sweeping vistas.",
-      "For full details on my university qualifications, visit my <a href=\"https://uk.linkedin.com/in/hqcasanova\">LinkedIn</a> profile. For recent experience, refer to the <i><a href=\"/work\">work</a></i> section."
+      "They say the sky is the limit. I always shoot for the moon though ;D",
+      "Hi! I'm Hector, a JavaScript <strong>frontend engineer</strong> with an <a aria-label=\"Univ. Edinburgh\" data-cooltipz-dir=\"bottom\" href=\"http://www.drps.ed.ac.uk/10-11_Archive_at_01-09-2010/ipp/ptmscdscic1f.htm\">academic</a> background in scientific programming and <strong>+5 years</strong> of professional experience in the UK. I have helped build a diverse set of large-scale <a aria-label=\"Wikipedia entry\"  data-cooltipz-dir=\"bottom\" href=\"https://en.wikipedia.org/wiki/Single-page_application\">single-page apps</a>: from an <a aria-label=\"Work – Hevnly\" data-cooltipz-dir=\"bottom\" href=\"/work/hevnly\">e-commerce platform</a> for a London-based startup to an award-winning <a aria-label=\"Work – CENtree\"  data-cooltipz-dir=\"bottom\" href=\"/work/centree\">ontology manager</a> for Big Pharma from scratch. My current expertise is in <a aria-label=\"GitHub repo\" data-cooltipz-dir=\"bottom\" href=\"https://hqcasanova.github.io/pin-pad\"><strong>Vue.js</strong></a> but I've also dabbled in <a aria-label=\"GitHub repo\" data-cooltipz-dir=\"bottom\" href=\"https://github.com/hqcasanova/interactive-matcher\"><strong>Angular</strong></a>.",
+      "I'm a crafter that normally straddles the boundary between <strong>UX and code</strong>, acting as the link with the design team. My ultimate aim is to strike a balance between feature complexity and user experience, letting the latter be the true driving force as much as possible. In essence, the big picture matters. That's why I love sweeping vistas.",
+      "For full details on my university qualifications, visit my <a href=\"https://uk.linkedin.com/in/hqcasanova\">LinkedIn</a> profile. For recent experience, refer to the <a href=\"/work\">Work</a> section."
     ],
     "work": {
       "list": [
         {
-          "name": "centree",
-          "title": "<i>C</i><i>E</i><i>Ntree</i>",
-          "period": "August 2018 - August 2020",
-          "description": "As the UX engineer at <a href=\"https://www.scibite.com/\">SciBite</a>, I was tasked with every aspect of CENtree's single-page app. CENtree is a new <a aria-label=\"Wikipedia entry\"  data-cooltipz-dir=\"bottom\" href=\"https://en.wikipedia.org/wiki/Ontology_(information_science)\">ontology</a> management platform improving on the familiar features of the <a href=\"https://www.ebi.ac.uk/ols\">Ontology Lookup Service</a> by the <a href=\"https://www.ebi.ac.uk\">European Bioinformatics Institute</a> and extending them with novel functionality such as in-line term previews, WYSIWYG tree editing or reactive network graph renderings of relationships. All implemented in Vue JS to accommodate both discovery and specific user journeys while preserving simplicity. The target audience were scientists with a mixed technical background. Beyond CENtree, I also liaised with other groups such as the <i><a href=\"/work/docstore\">D</a></i><i><a href=\"/work/docstore\">O</a></i><i><a href=\"/work/docstore\">Cstore</a></i> team to align the identity and customer experience of all the apps in the SciBite ecosystem."
-        },
-        {
-          "name": "docstore",
-          "title": "<i>D</i><i>O</i><i>Cstore</i>",
-          "period": "December 2019 - August 2020",
-          "description": "As part of my wider remit to re-align UIs across <a href=\"https://www.scibite.com/\">SciBite</a>, I helped with the re-design of the DOCstore app, a smart search engine that harnesses entity indexing to simplify the process of finding semantically relevant results from scientific literature. Expected personas ranged from the lab technician performing a single specific search to the biomedical scientist seeking relationships through serendipity. Given that both detailed control and simplicity were paramount, a progressive-reveal approach was adopted where specialist UI elements would be presented incrementally as the user progressed with their search. A prominent example of this was the search typeahead, whose rich interface was designed to allow two modes of search –entity and document– while avoiding cognitive overload as much as possible."
+          "name": "hevnly",
+          "title": "<i>H</i>evnly",
+          "period": "2014 ~ 2017",
+          "description": "I became responsible for most of the UI of the shopfront app. I also built the whole back-office app for vendors and helped improve and extend the magazine app. Some innovative features I had the opportunity to implement included optimistic filtering, localstorage-based caching and a recursive stock-aware product matrix."
         },
         {
           "name": "biostudies",
-          "title": "<i>Bio</i><i>Studies</i>",
-          "period": "August 2017 - August 2018",
+          "title": "<i>B</i>io<i>S</i>tudies",
+          "period": "2017 ~ 2018",
           "description": "I was the frontend engineer and lead UX designer for the <a href=\"https://www.ebi.ac.uk/biostudies/\">Biostudies</a> team within the <a href=\"https://www.ebi.ac.uk\">European Bioinformatics Institute</a>. Developed in Angular, their single-page app for submission and validation relies heavily on dynamic forms to support generic studies that are not catered for by any other EBI service. My remit was to improve the overall reliability and intuitiveness of the app as well as delivering new features such as a real-time form checklist, validation groups or bulk file uploading."
         },
         {
-          "name": "hevnly",
-          "title": "<i>Hevnly</i>",
-          "period": "November 2014 - July 2017",
-          "description": "I became responsible for most of the UI of the shopfront app. I also built the whole back-office app for vendors and helped improve and extend the magazine app. Some innovative features I had the opportunity to implement included optimistic filtering, localstorage-based caching and a recursive stock-aware product matrix."
+          "name": "centree",
+          "title": "<i>CEN</i>tree",
+          "period": "2018 ~ 2020",
+          "description": "As the UX engineer at <a href=\"https://www.scibite.com/\">SciBite</a>, I was tasked with every aspect of CENtree's single-page app. CENtree is a new <a aria-label=\"Wikipedia entry\"  data-cooltipz-dir=\"bottom\" href=\"https://en.wikipedia.org/wiki/Ontology_(information_science)\">ontology</a> management platform improving on the familiar features of the <a href=\"https://www.ebi.ac.uk/ols\">Ontology Lookup Service</a> by the <a href=\"https://www.ebi.ac.uk\">European Bioinformatics Institute</a> and extending them with novel functionality such as in-line term previews, WYSIWYG tree editing or reactive network graph renderings of relationships. All implemented in Vue JS to accommodate both discovery and specific user journeys while preserving simplicity. The target audience were scientists with a mixed technical background. The app won the Bio-IT World's <a href=\"https://www.bio-itworld.com/news/2022/05/05/bio-it-world-judges-community-honor-six-outstanding-new-products\">Best of Show</a> award in May 2022. Beyond CENtree, I also liaised with other groups such as the <a href=\"/work/docstore\">DOCstore</a> team to align the identity and customer experience of all the apps in the SciBite ecosystem."
+        },
+        {
+          "name": "docstore",
+          "title": "<i>DOC</i>store",
+          "period": "2019 ~ 2020",
+          "description": "As part of my wider remit to re-align UIs across <a href=\"https://www.scibite.com/\">SciBite</a>, I helped with the re-design of the DOCstore app, a smart search engine that harnesses entity indexing to simplify the process of finding semantically relevant results from scientific literature. Expected personas ranged from the lab technician performing a single specific search to the biomedical scientist seeking relationships through serendipity. Given that both detailed control and simplicity were paramount, a progressive-reveal approach was adopted where specialist UI elements would be presented incrementally as the user progressed with their search. A prominent example of this was the search typeahead, whose rich interface was designed to allow two modes of search –entity and document– while avoiding cognitive overload as much as possible."
         }
       ],
-      "links": "For a full list of past jobs, visit my <a href=\"https://uk.linkedin.com/in/hqcasanova\">LinkedIn</a> profile. For an overview of myself, refer to the <i><a href=\"/about\">about</a></i> section.",
-      "back": "All projects"
+      "links": "For a full list of past jobs, visit my <a href=\"https://uk.linkedin.com/in/hqcasanova\">LinkedIn</a> profile. For an overview of myself, refer to the <a href=\"/about\">About</a> section.",
+      "back": "Show all"
     }
   }
 }
