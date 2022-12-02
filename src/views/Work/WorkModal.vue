@@ -201,8 +201,6 @@ export default {
       if (this[jobObjAction].name) {
         routerAction = this.currJob.name ? 'replace' : 'push';
         this.$router[routerAction]({ name: this.routeName, params: { selectedName: this[jobObjAction].name } });
-      } else {
-        this.$router.push({ name: this.routeName });
       }
     },
   },
