@@ -147,15 +147,6 @@ export default {
         background-color: $lighter-grey;
       }
     }
-
-    @media (min-width: 1025px) {
-      column-count: 2;
-      column-fill: balance;
-
-      .lazy-image {
-        min-height: 22vw;
-      }
-    }
   }
 }
 

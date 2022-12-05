@@ -329,8 +329,15 @@ section {
         height: 89px;
       }
 
-      .work-details .lazy-image {
-        min-height: 13.5vw;
+      .screenshots {
+        .lazy-image {
+          min-height: 13.5vw;
+        }
+
+        @media (min-width: 1710px) {
+          column-count: 2;
+          column-fill: balance;
+        }
       }
     }
   }
