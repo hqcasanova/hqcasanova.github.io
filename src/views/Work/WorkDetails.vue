@@ -117,7 +117,7 @@ export default {
 
 <style scoped lang="scss">
 .work-details {
-  padding: 1.3rem 1.2rem 0;
+  padding: 1.3rem 1.4rem 0;
 
   h3 {
     margin-bottom: .7rem;
