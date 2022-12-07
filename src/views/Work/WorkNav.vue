@@ -74,7 +74,8 @@ export default {
     }
 
     &:focus:active {
-      box-shadow: none;
+      box-shadow: none !important;
+      text-shadow: none;
     }
 
     .chevron {

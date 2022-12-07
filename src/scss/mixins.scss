@@ -86,6 +86,11 @@
   &:focus, &:hover {
     color: $colour-hover;
   }
+
+  &:focus:active {
+    box-shadow: none;
+    text-shadow: none;
+  }
 }
 
 @mixin char-bubble($background: $error, $colour: $white) {

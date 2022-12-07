@@ -250,14 +250,18 @@ export default {
     }
 
     .menu-utils {
-      position: absolute;
-      right: 4em;
+      margin-left: auto;
       display: flex;
       font-size: .8em;
 
       /* Folded portrait */
       @media screen and (max-width: 280px) {
         display: none;
+      }
+
+      @media screen and (min-width: 540px) {
+        position: absolute;
+        right: 5em;
       }
     }
 
