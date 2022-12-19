@@ -63,6 +63,12 @@
           "title": "<i>DOC</i>store",
           "period": "2019 ~ 2020",
           "description": "As part of my wider remit to re-align UIs across <a href=\"https://www.scibite.com/\">SciBite</a>, I helped with the re-design of the DOCstore app, a smart search engine that harnesses entity indexing to simplify the process of finding semantically relevant results from scientific literature. Expected personas ranged from the lab technician performing a single specific search to the biomedical scientist seeking relationships through serendipity. Given that both detailed control and simplicity were paramount, a progressive-reveal approach was adopted where specialist UI elements would be presented incrementally as the user progressed with their search. A prominent example of this was the search typeahead, whose rich interface was designed to allow two modes of search –entity and document– while avoiding cognitive overload as much as possible."
+        },
+        {
+          "name": "remote",
+          "title": "<i>R</i>emote",
+          "period": "2021 ~ 2022",
+          "description": "As a remote frontend developer, I have helped a number of companies with their UIs: from redacting the preliminary UX requirements for a new app to improving support for mobile and programmatically streamlining the rendering of new types of visualisations."
         }
       ],
       "links": "For a full list of past jobs, visit my <a href=\"https://uk.linkedin.com/in/hqcasanova\">LinkedIn</a> profile. For an overview of myself, refer to the <a href=\"/about\">About</a> section.",

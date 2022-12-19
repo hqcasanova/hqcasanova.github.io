@@ -63,6 +63,12 @@
           "title": "<i>DOC</i>store",
           "period": "2019 ~ 2020",
           "description": "Como parte de mi misión más amplia de re-alinear las interfaces de todo <a href=\"https://www.scibite.com/\">SciBite</a>, ayudé a rediseñar la aplicación DOCstore, un motor de búsqueda inteligente que aprovecha la indexación de entidades para simplificar el proceso de búsqueda en literatura científica de resultados semánticamente relevantes. El perfil característico iba desde el técnico de laboratorio que realizaba una única búsqueda específica hasta el científico biomédico que buscaba relaciones sin un objetivo preconcebido. Dado que tanto el control detallado como la simplicidad eran primordiales, se adoptó un enfoque progresivo en el que los elementos de la interfaz de usuario especializados se presentaban de forma incremental a medida que el usuario avanzaba en su búsqueda. Un ejemplo destacado de esto fue el auto-completado o búsqueda por adelantado, cuya rica interfaz fue diseñada para permitir dos modos de búsqueda (entidad y documento) evitando la sobrecarga cognitiva tanto como fuera posible."
+        },
+        {
+          "name": "remote",
+          "title": "<i>R</i>emote",
+          "period": "2021 ~ 2022",
+          "description": "Como desarrollador frontend remoto, he ayudado a varias empresas con sus interfaces de usuario: desde redactar los requisitos preliminares de UX para una nueva aplicación hasta mejorar la compatibilidad con móviles y agilizar mediante programación la representación de nuevos tipos de visualizaciones."
         }
       ],
       "links": "Para una lista completa de mi vida laboral, visita mi perfil en <a href=\"https://uk.linkedin.com/in/hqcasanova/es\">LinkedIn</a>. Para saber más sobre mí, visita la sección <a href=\"/about\">Acerca</a>.",
