@@ -28,7 +28,10 @@
       </li>
     </ol>
 
-    <p v-html="locale.content.work.links"></p>
+    <p
+      v-html="locale.content.work.links"
+      @click="localisedClickHandler"
+    />
 
     <teleport :to="modalTarget">
       <work-modal
