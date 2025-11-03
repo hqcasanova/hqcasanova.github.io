@@ -69,6 +69,12 @@
           "title": "<i>R</i>emote",
           "period": "2021 ~ 2022",
           "description": "As a remote frontend developer, I have helped a number of companies with their UIs: from redacting the preliminary UX requirements for a new app to improving support for mobile and programmatically streamlining the rendering of new types of visualisations."
+        },
+        {
+          "name": "d11",
+          "title": "<i>D</i>ouble Eleven",
+          "period": "2023 ~ 2025",
+          "description": "The project consisted of a large SPA that started as an in-house task management system and grew to become the de facto ERP for the company. As the most experienced frontend engineer on the team, I was determined to improve adherence to best practices. To that end, I created a suite of base components to dramatically reduce code redundancy and standardise UX/UI without compromising flexibility. Also, I optimised the rendering performance of the task table to cater for thousands of entries without pagination as per requirements."
         }
       ],
       "links": "For a full list of past jobs, visit my <a href=\"https://uk.linkedin.com/in/hqcasanova\">LinkedIn</a> profile. For an overview of myself, refer to the <a href=\"/about\">About</a> section.",
