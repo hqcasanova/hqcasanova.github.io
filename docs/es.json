@@ -69,6 +69,12 @@
           "title": "<i>R</i>emote",
           "period": "2021 ~ 2022",
           "description": "Como desarrollador frontend remoto, he ayudado a varias empresas con sus interfaces de usuario: desde redactar los requisitos preliminares de UX para una nueva aplicación hasta mejorar la compatibilidad con móviles y agilizar mediante programación la representación de nuevos tipos de visualizaciones."
+        },
+        {
+          "name": "d11",
+          "title": "<i>D</i>ouble Eleven",
+          "period": "2023 ~ 2025",
+          "description": "El proyecto consistía en una aplicación web que comenzó como un sistema interno de gestión de tareas y creció hasta convertirse en el ERP de facto de la empresa. Como ingeniero frontend con más experiencia del equipo, estaba decidido a mejorar el cumplimiento de mejores prácticas. Con ese fin, creé un conjunto de componentes básicos para reducir drásticamente la redundancia del código y estandarizar el UX/UI sin comprometer la flexibilidad. Además, optimicé el rendimiento de renderización de la tabla de tareas para dar cabida a miles de entradas sin paginación, según los requisitos."
         }
       ],
       "links": "Para una lista completa de mi vida laboral, visita mi perfil en <a href=\"https://uk.linkedin.com/in/hqcasanova/es\">LinkedIn</a>. Para saber más sobre mí, visita la sección <a href=\"/about\">Acerca</a>.",
